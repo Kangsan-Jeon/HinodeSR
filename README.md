@@ -1,7 +1,7 @@
 # HinodeSR
 Apply super-resolution to HINODE dataset(granule imge) using RCAN
 
-I fixed the original code to fit me(option.py, hinode.py, srdata.py and so on in RCAN_TrainCode)
+I fixed the original code to fit me(option.py, hinode.py, srdata.py and so on)
 Especially I used a single filter image, so I added a reshape code in srdata.py
 
 I trained my dataset on Linux enviroment with TitanX GPU  
