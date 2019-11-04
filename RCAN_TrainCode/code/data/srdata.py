@@ -31,13 +31,17 @@ class SRData(data.Dataset):
             self.images_hr, self.images_lr = self._scan()
             if args.ext.find('reset') >= 0:
                 print('Preparing seperated binary files')
+                # print(self.images_hr)
                 for v in self.images_hr:
+
                     hr = misc.imread(v)
+                    hr = hr.reshape(hr.shape[0], hr.shape[1], 1)
                     name_sep = v.replace(self.ext, '.npy')
                     np.save(name_sep, hr)
                 for si, s in enumerate(self.scale):
                     for v in self.images_lr[si]:
                         lr = misc.imread(v)
+                        lr = lr.reshape(lr.shape[0], lr.shape[1], 1)
                         name_sep = v.replace(self.ext, '.npy')
                         np.save(name_sep, lr)
 
@@ -63,10 +67,12 @@ class SRData(data.Dataset):
 
                 list_hr, list_lr = self._scan()
                 hr = [misc.imread(f) for f in list_hr]
+                hr = hr.reshape(hr.shape[0], hr.shape[1], 1)
                 np.save(self._name_hrbin(), hr)
                 del hr
                 for si, s in enumerate(self.scale):
                     lr_scale = [misc.imread(f) for f in list_lr[si]]
+                    lr_scale = lr_scale.reshape(lr_scale.shape[0], lr_scale.shape[1], 1)
                     np.save(self._name_lrbin(s), lr_scale)
                     del lr_scale
                 _load_bin()
@@ -105,7 +111,9 @@ class SRData(data.Dataset):
         if self.args.ext == 'img' or self.benchmark:
             filename = hr
             lr = misc.imread(lr)
+            lr = lr.reshape(lr.shape[0], lr.shape[1], 1)
             hr = misc.imread(hr)
+            hr = hr.reshape(hr.shape[0], hr.shape[1], 1)
         elif self.args.ext.find('sep') >= 0:
             filename = hr
             lr = np.load(lr)

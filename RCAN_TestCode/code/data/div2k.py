@@ -9,9 +9,9 @@ import scipy.misc as misc
 import torch
 import torch.utils.data as data
 
-class DIV2K(srdata.SRData):
+class HINODE(srdata.SRData):
     def __init__(self, args, train=True):
-        super(DIV2K, self).__init__(args, train)
+        super(HINODE, self).__init__(args, train)
         self.repeat = args.test_every // (args.n_train // args.batch_size)
 
     def _scan(self):

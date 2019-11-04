@@ -19,7 +19,7 @@ parser.add_argument('--seed', type=int, default=1,
                     help='random seed')
 
 # Data specifications
-parser.add_argument('--dir_data', type=str, default='/home/yulun/data/PyTorch/npy',
+parser.add_argument('--dir_data', type=str, default='/DATA/sumiaya/RCAN-master/RCAN_TrainCode/code/datasets',
                     help='dataset directory')
 parser.add_argument('--dir_demo', type=str, default='../test',
                     help='demo image directory')
@@ -43,7 +43,7 @@ parser.add_argument('--patch_size', type=int, default=192,
                     help='output patch size')
 parser.add_argument('--rgb_range', type=int, default=255,
                     help='maximum value of RGB')
-parser.add_argument('--n_colors', type=int, default=3,
+parser.add_argument('--n_colors', type=int, default=1,
                     help='number of color channels to use')
 parser.add_argument('--noise', type=str, default='.',
                     help='Gaussian noise std.')

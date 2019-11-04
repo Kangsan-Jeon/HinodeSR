@@ -19,31 +19,31 @@ parser.add_argument('--seed', type=int, default=1,
                     help='random seed')
 
 # Data specifications
-parser.add_argument('--dir_data', type=str, default='/home/yulun/data/SR/traindata/DIV2K/bicubic',
+parser.add_argument('--dir_data', type=str, default='../../../../../HINODE',
                     help='dataset directory')
 parser.add_argument('--dir_demo', type=str, default='../test',
                     help='demo image directory')
-parser.add_argument('--data_train', type=str, default='DIV2K',
+parser.add_argument('--data_train', type=str, default='HINODE',
                     help='train dataset name')
-parser.add_argument('--data_test', type=str, default='DIV2K',
+parser.add_argument('--data_test', type=str, default='HINODE',
                     help='test dataset name')
 parser.add_argument('--benchmark_noise', action='store_true',
                     help='use noisy benchmark sets')
-parser.add_argument('--n_train', type=int, default=800,
+parser.add_argument('--n_train', type=int, default=311,
                     help='number of training set')
-parser.add_argument('--n_val', type=int, default=5,
+parser.add_argument('--n_val', type=int, default=20,
                     help='number of validation set')
-parser.add_argument('--offset_val', type=int, default=800,
+parser.add_argument('--offset_val', type=int, default=311,
                     help='validation index offest')
 parser.add_argument('--ext', type=str, default='sep_reset',
                     help='dataset file extension')
-parser.add_argument('--scale', default='4',
+parser.add_argument('--scale', default='2',
                     help='super resolution scale')
-parser.add_argument('--patch_size', type=int, default=192,
+parser.add_argument('--patch_size', type=int, default=60,
                     help='output patch size')
 parser.add_argument('--rgb_range', type=int, default=255,
                     help='maximum value of RGB')
-parser.add_argument('--n_colors', type=int, default=3,
+parser.add_argument('--n_colors', type=int, default=1,
                     help='number of color channels to use')
 parser.add_argument('--noise', type=str, default='.',
                     help='Gaussian noise std.')
@@ -77,7 +77,7 @@ parser.add_argument('--reset', action='store_true',
                     help='reset the training')
 parser.add_argument('--test_every', type=int, default=1000,
                     help='do test per every N batches')
-parser.add_argument('--epochs', type=int, default=1000,
+parser.add_argument('--epochs', type=int, default=100,
                     help='number of epochs to train')
 parser.add_argument('--batch_size', type=int, default=16,
                     help='input batch size for training')
@@ -114,7 +114,7 @@ parser.add_argument('--weight_decay', type=float, default=0,
                     help='weight decay')
 
 # Loss specifications
-parser.add_argument('--loss', type=str, default='1*L1',
+parser.add_argument('--loss', type=str, default='1*MSE',
                     help='loss function configuration')
 parser.add_argument('--skip_threshold', type=float, default='1e6',
                     help='skipping batch that has large error')
