@@ -7,7 +7,7 @@ Especially I used a single filter image, so I added a reshape code in srdata.py
 I trained my dataset on Linux enviroment with TitanX GPU  
 I just compared result with L1 and MSE loss  
 
-Trained weight is uploaded on [here](https://drive.google.com/open?id=1ALXlsQUS1NLCsxk_nQ5VvDnKrzuei_5b)
+Trained weight is uploaded on [here](https://drive.google.com/open?id=1geRuyHRDTMMdS-oe6f1Pcr5EakWaopHQ)
 
 ## Summary
 ### Experiment cases
